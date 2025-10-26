@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-primary: "Gilda Display", sans-serif;
+  --font-secondary: "Barlow", sans-serif;
+  --font-tertiary: "Barlow Condensed", sans-serif;
+
+  --color-primary: #0a0a0a;
+  --color-accent: #a37d4c;
+  --color-accent-hover: #967142;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1140px;
+
+  --background-image-hero: url("/assets/room.jpg");
+}
+
+body {
+  @apply font-secondary text-primary;
+}
+
+.container {
+  @apply max-w-screen-xl mx-auto px-4;
+}
+
+.input {
+  @apply placeholder:text-primary;
+}
+
+.h2 {
+  @apply font-primary text-[45px] mb-4;
+}
+
+.h3 {
+  @apply text-2xl font-primary font-semibold tracking-[1px] mb-2;
+}
+
+.btn {
+  @apply px-8 flex flex-1 items-center justify-center text-[15px] tracking-[3px] font-tertiary uppercase text-white transition-colors cursor-pointer;
+}
+
+.btn-sm {
+  @apply h-12;
+}
+
+.btn-lg {
+  @apply h-15;
+}
+
+.btn-primary {
+  @apply bg-accent hover:bg-accent-hover;
+}
+
+.btn-secondary {
+  @apply bg-primary hover:bg-accent;
+}
+
+.btn-white {
+  @apply bg-white text-primary;
+}
