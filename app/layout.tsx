@@ -4,6 +4,7 @@ import { Barlow, Barlow_Condensed, Gilda_Display } from "next/font/google";
 
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { RoomProvider } from "@/components/room-context";
 
 import "./globals.css";
 
@@ -44,9 +45,11 @@ export default function RootLayout({
       <body
         className={`${gildaDisplay.variable} ${barlow.variable} ${barlowCondensed.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <RoomProvider>
+          <Header />
+          {children}
+          <Footer />
+        </RoomProvider>
         <Analytics />
       </body>
     </html>
