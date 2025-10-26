@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Barlow, Barlow_Condensed, Gilda_Display } from "next/font/google";
 
 import "./globals.css";
@@ -41,6 +42,7 @@ export default function RootLayout({
         className={`${gildaDisplay.variable} ${barlow.variable} ${barlowCondensed.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
