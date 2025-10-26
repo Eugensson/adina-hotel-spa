@@ -7,11 +7,19 @@ import { BsCalendar } from "react-icons/bs";
 import "react-datepicker/dist/react-datepicker.css";
 import "./datepicker.css";
 
-export const CheckOut = () => {
+import { cn } from "@/lib/utils";
+
+interface CheckOutProps {
+  className?: string;
+}
+
+export const CheckOut = ({ className }: CheckOutProps) => {
   const [endDate, setEndDate] = useState<Date | undefined>(undefined);
 
   return (
-    <div className="relative flex items-center justify-end h-full">
+    <div
+      className={cn("relative flex items-center justify-end h-full", className)}
+    >
       <div className="absolute z-10 pr-8">
         <div>
           <BsCalendar size={16} className="text-accent" />
@@ -21,6 +29,7 @@ export const CheckOut = () => {
         className="w-full h-full"
         selected={endDate}
         placeholderText="Check-in"
+        minDate={new Date()}
         onChange={(date) => setEndDate(date as Date)}
       />
     </div>

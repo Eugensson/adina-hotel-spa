@@ -6,6 +6,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 import { RoomContext } from "@/components/room-context";
 
+import { cn } from "@/lib/utils";
+
 const list = [
   { name: "No Children", value: 0 },
   { name: "1 Child", value: 1 },
@@ -14,7 +16,11 @@ const list = [
   { name: "4 Children", value: 4 },
 ];
 
-export const KidsDropdown = () => {
+interface KidsDropdownProps {
+  className?: string;
+}
+
+export const KidsDropdown = ({ className }: KidsDropdownProps) => {
   const context = useContext(RoomContext);
 
   if (!context)
@@ -23,7 +29,7 @@ export const KidsDropdown = () => {
   const { kids, setKids } = context;
 
   return (
-    <Menu as="div" className="w-full h-full bg-white relative">
+    <Menu as="div" className={cn("w-full h-full bg-white relative", className)}>
       <MenuButton className="w-full h-full flex items-center justify-between px-8">
         {kids === 0 ? null : kids}{" "}
         {kids === 0 ? "No Children" : kids === 1 ? "Child" : "Children"}

@@ -15,7 +15,7 @@
   --breakpoint-lg: 960px;
   --breakpoint-xl: 1140px;
 
-  --background-image-hero: url("/assets/room.jpg");
+  --background-image-room: url("/assets/room.jpg");
 }
 
 body {

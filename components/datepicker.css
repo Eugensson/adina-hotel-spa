@@ -34,6 +34,10 @@
 }
 
 .react-datepicker__current-month {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #aa8453;
   color: white;
   padding: 0.3rem 0;
@@ -55,6 +59,8 @@
 .react-datepicker__day--selected,
 .react-datepicker__day--keyboard-selected {
   background: #aa8453;
+  color: white;
+  font-weight: 400;
   border-radius: 0;
 }
 

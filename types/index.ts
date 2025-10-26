@@ -1,3 +1,4 @@
+import { IconType } from "react-icons/lib";
 import { StaticImageData } from "next/image";
 
 export type RoomType = {
@@ -6,7 +7,7 @@ export type RoomType = {
   description: string;
   facilities: Array<{
     name: string;
-    icon: React.FC<React.SVGProps<SVGSVGElement>>;
+    icon: IconType;
   }>;
   size: number;
   maxPerson: number;

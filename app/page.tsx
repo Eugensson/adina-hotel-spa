@@ -1,3 +1,4 @@
+import { Rooms } from "@/components/rooms";
 import { BookForm } from "@/components/book-form";
 import { HeroSlider } from "@/components/hero-slider";
 
@@ -10,6 +11,7 @@ const Home = () => {
           <BookForm />
         </div>
       </div>
+      <Rooms />
     </main>
   );
 };

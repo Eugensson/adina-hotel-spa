@@ -6,6 +6,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 import { RoomContext } from "@/components/room-context";
 
+import { cn } from "@/lib/utils";
+
 const list = [
   { name: "1 Adult", value: 1 },
   { name: "2 Adults", value: 2 },
@@ -13,7 +15,11 @@ const list = [
   { name: "4 Adults", value: 4 },
 ];
 
-export const AdultsDropdown = () => {
+interface AdultsDropdownProps {
+  className?: string;
+}
+
+export const AdultsDropdown = ({ className }: AdultsDropdownProps) => {
   const context = useContext(RoomContext);
 
   if (!context)
@@ -22,7 +28,7 @@ export const AdultsDropdown = () => {
   const { adults, setAdults } = context;
 
   return (
-    <Menu as="div" className="w-full h-full bg-white relative">
+    <Menu as="div" className={cn("w-full h-full bg-white relative", className)}>
       <MenuButton className="w-full h-full flex items-center justify-between px-8">
         {adults} Adults
         <BsChevronDown size={16} className="text-accent-hover" />
